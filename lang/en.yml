@@ -1,0 +1,17 @@
+en:
+  NewsPage:
+    SINGULARNAME: 'News page'
+    PLURALNAME: 'News pages'
+    DESCRIPTION: 'Basic page type for news '
+  NewsHolder:
+    SINGULARNAME: 'News holder'
+    PLURALNAME: 'News holders'
+    DESCRIPTION: 'News articles container'
+  News:
+    db_Author: 'Author'
+    db_Published: 'Published on'
+    db_Summary: 'Summary'
+    AUTHOR: 'By <span class="author">{Author}</span>'
+    PUBLISHED: 'Published on {Published}'
+    AUTHOR_PUBLISHED: 'By <span class="author">{Author}</span>, published on {Published}'
+    NO_NEWS: 'No recent news published yet!'

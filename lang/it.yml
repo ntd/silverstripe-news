@@ -1,0 +1,17 @@
+it:
+  NewsPage:
+    SINGULARNAME: 'Pagina news'
+    PLURALNAME: 'Pagine news'
+    DESCRIPTION: 'Tipo di pagina base per news'
+  NewsHolder:
+    SINGULARNAME: 'Raccoglitore di news'
+    PLURALNAME: 'Raccoglitori di news'
+    DESCRIPTION: 'Contenitore di pagine news'
+  News:
+    db_Author: 'Autore'
+    db_Published: 'Data pubblicazione'
+    db_Summary: 'Sintesi'
+    AUTHOR: 'Di <span class="author">{Author}</span>'
+    PUBLISHED: 'Pubblicato il {Published}'
+    AUTHOR_PUBLISHED: 'Di <span class="author">{Author}</span>, pubblicato il {Published}'
+    NO_NEWS: 'Non sono ancora presenti news recenti!'

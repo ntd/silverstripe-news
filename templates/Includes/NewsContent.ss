@@ -1,0 +1,2 @@
+<% include NewsContentHeader %>
+<% include ContentBody %>

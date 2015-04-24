@@ -43,6 +43,18 @@ class NewsHolder_Controller extends Page_Controller {
     );
 
 
+    public function index($request) {
+        $types = $this->request->getAcceptMimetypes();
+        if (is_array($types) && $types[0] == 'application/atom+xml') {
+            // An application/atom+xml response has been requested
+            return $this->feed();
+        }
+
+        // Perform the default action on other requests
+        // (there is no parent::index() method to chain-up)
+        return $this->getViewer($this->action)->process($this);
+    }
+
     public function feed() {
         $this->response->addHeader('Content-Type', 'application/atom+xml');
         return $this->renderWith('AtomFeed');

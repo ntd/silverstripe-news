@@ -9,11 +9,13 @@ it:
     DESCRIPTION: 'Contenitore di pagine news'
   News:
     Author: 'Autore'
-    AuthorNotes: "Se l'autore non viene specificato nella NewsHolder, <strong>dovrà</strong> essere specificato per ogni NewsPage"
+    AuthorHolder: "Specifare qui almeno il nome dell'autore o <strong>dovrà</strong> essere specificato per ogni sottopagina"
+    AuthorPage: "Se l'autore viene omesso, sarà usato quello specificato nella pagina contenitore"
     Name: 'Nome'
     URI: 'Sito o pagina web'
     Email: 'Indirizzo email'
     Published: 'Data pubblicazione'
+    PublishedDescription: "Se la data pubblicazione non è specificata, sarà implicitamente usata la data di creazione dal database"
     Summary: 'Sintesi'
     AUTHOR: 'Di <span class="author">{Author}</span>'
     PUBLISHED: 'Pubblicato il {Published}'

@@ -5,36 +5,41 @@ class NewsPage extends Page {
     private static $icon = 'news/img/microphone.png';
 
     private static $db = array(
-        'Summary'   => 'HTMLText',
-        'Author'    => 'Varchar(128)',
-        'Published' => 'Date',
+        'Summary'     => 'HTMLText',
+        'AuthorName'  => 'Varchar(128)',
+        'AuthorURI'   => 'Varchar(128)',
+        'AuthorEmail' => 'Varchar(128)',
+        'Published'   => 'Date',
     );
 
 
     public function getCMSFields() {
-        if (! $this->Published) {
-            $this->Published = date('Y-m-d');
-        }
-
         $fields = parent::getCMSFields();
+
         $group = new FieldGroup();
+        $group->setTitle(_t('News.Author'));
+        $group->setDescription(_t('News.AuthorPage'));
         $fields->addFieldToTab('Root.Main', $group, 'Content');
 
-        $field = new HtmlEditorField('Summary', _t('News.Summary'));
-        $field->setRows(4);
+        $field = new TextField('AuthorName',  _t('News.Name'));
         $group->push($field);
 
-        $vbox = new CompositeField();
-        $group->push($vbox);
+        $field = new TextField('AuthorURI',   _t('News.URI'));
+        $group->push($field);
+
+        $field = new TextField('AuthorEmail', _t('News.Email'));
+        $group->push($field);
 
         $field = new DateField('Published', _t('News.Published'));
+        $field->setDescription(_t('News.PublishedDescription'));
         $field->setLocale('it_IT');
         $field->setConfig('dateformat', 'dd/MM/YYYY');
         $field->setConfig('showcalendar', true);
-        $vbox->push($field);
+        $fields->addFieldToTab('Root.Main', $field, 'Content');
 
-        $field = new TextField('Author', _t('News.Author'));
-        $vbox->push($field);
+        $field = new HtmlEditorField('Summary', _t('News.Summary'));
+        $field->setRows(4);
+        $fields->addFieldToTab('Root.Main', $field, 'Content');
 
         return $fields;
     }

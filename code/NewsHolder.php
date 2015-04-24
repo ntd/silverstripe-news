@@ -20,7 +20,7 @@ class NewsHolder extends Page {
 
         $group = new FieldGroup();
         $group->setTitle(_t('News.Author'));
-        $group->setDescription(_t('News.AuthorNotes'));
+        $group->setDescription(_t('News.AuthorHolder'));
         $fields->addFieldToTab('Root.Main', $group, 'Content');
 
         $field = new TextField('AuthorName',  _t('News.Name'));

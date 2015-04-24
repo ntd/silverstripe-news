@@ -1,0 +1,30 @@
+{
+    "name": "entidi/silverstripe-news",
+    "description": "A module for handling a typical news system",
+    "type": "silverstripe-module",
+    "homepage": "http://silverstripe.entidi.com/",
+    "keywords": ["silverstripe", "news"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Nicola Fontana",
+            "email": "ntd@entidi.it",
+            "homepage": "http://www.entidi.com/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "http://dev.entidi.com/p/silverstripe-news/issues/",
+        "source": "http://dev.entidi.com/p/silverstripe-news/source/tree/master/"
+    },
+    "require": {
+        "silverstripe/framework": ">=3.0",
+        "entidi/silverstripe-carousel": ">=2.0.0"
+    },
+    "extra": {
+        "installer-name": "news"
+    },
+    "suggest": {
+        "entidi/silverstrap": "A silverstripe theme that supports silverstripe-news out of the box"
+    }
+}

@@ -19,7 +19,7 @@ class NewsPage extends Page {
         $group = new FieldGroup();
         $group->setTitle(_t('News.Author'));
         $group->setDescription(_t('News.AuthorPage'));
-        $fields->addFieldToTab('Root.Main', $group, 'Content');
+        $fields->addFieldToTab('Root.Main', $group, 'Metadata');
 
         $field = new TextField('AuthorName',  _t('News.Name'));
         $group->push($field);

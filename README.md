@@ -2,8 +2,12 @@ silverstripe-news
 =================
 
 The [silverstripe-feedreader](http://silverstripe.entidi.com/) module
-implements two new page types: *NewsHolder* (the news container) and
-*NewsPage* (the real news workhorse).
+implements two new page types for handling a typical basic news system:
+*NewsHolder* (the folder containing related news) and *NewsPage* (the
+page presenting a single news).
+
+Every `NewsHolder` will have its own feed and by default it will render
+its children (supposedly all `NewsPage` instances) in a `<dl>` list.
 
 Features
 --------

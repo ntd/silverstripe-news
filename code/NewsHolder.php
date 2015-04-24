@@ -18,36 +18,22 @@ class NewsHolder extends Page {
     public function getCMSFields() {
         $fields = parent::getCMSFields();
 
-        $field = new TextField('AuthorName',  _t('News.AuthorName'));
-        $fields->addFieldToTab('Root.Main', $field, 'Content');
+        $group = new FieldGroup();
+        $group->setTitle(_t('News.Author'));
+        $group->setDescription(_t('News.AuthorNotes'));
+        $fields->addFieldToTab('Root.Main', $group, 'Content');
 
-        $field = new TextField('AuthorURI',   _t('News.AuthorURI'));
-        $fields->addFieldToTab('Root.Main', $field, 'Content');
+        $field = new TextField('AuthorName',  _t('News.Name'));
+        $group->push($field);
 
-        $field = new TextField('AuthorEmail', _t('News.AuthorEmail'));
-        $fields->addFieldToTab('Root.Main', $field, 'Content');
+        $field = new TextField('AuthorURI',   _t('News.URI'));
+        $group->push($field);
+
+        $field = new TextField('AuthorEmail', _t('News.Email'));
+        $group->push($field);
 
         return $fields;
     }
-
-
-    /**
-     * @config
-     * @var String $author_name
-     */
-    private static $author_name = 'silverstripe-news';
-
-    /**
-     * @config
-     * @var String $author_uri
-     */
-    private static $author_uri = 'http://silverstripe.entidi.com/';
-
-    /**
-     * @config
-     * @var String $author_email
-     */
-    private static $author_email = 'ntd@entidi.it';
 }
 
 class NewsHolder_Controller extends Page_Controller {

@@ -33,7 +33,7 @@ class NewsPage extends Page {
         $field->setConfig('showcalendar', true);
         $vbox->push($field);
 
-        $field = new TextField('Author', _t('News.AuthorName'));
+        $field = new TextField('Author', _t('News.Author'));
         $vbox->push($field);
 
         return $fields;

@@ -8,9 +8,11 @@ it:
     PLURALNAME: 'Raccoglitori di news'
     DESCRIPTION: 'Contenitore di pagine news'
   News:
-    AuthorName: 'Autore'
-    AuthorURI: 'Sito web autore'
-    AuthorEmail: 'Email autore'
+    Author: 'Autore'
+    AuthorNotes: "Se l'autore non viene specificato nella NewsHolder, <strong>dovrà</strong> essere specificato per ogni NewsPage"
+    Name: 'Nome'
+    URI: 'Sito o pagina web'
+    Email: 'Indirizzo email'
     Published: 'Data pubblicazione'
     Summary: 'Sintesi'
     AUTHOR: 'Di <span class="author">{Author}</span>'

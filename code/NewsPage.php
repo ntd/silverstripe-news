@@ -2,7 +2,7 @@
 
 class NewsPage extends Page {
 
-    private static $icon = 'news/img/microphone.png';
+    private static $icon = 'news/img/NewsPage.png';
 
     private static $db = array(
         'Summary'     => 'HTMLText',

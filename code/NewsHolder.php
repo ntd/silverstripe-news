@@ -2,7 +2,7 @@
 
 class NewsHolder extends Page {
 
-    private static $icon = 'news/img/folder.png';
+    private static $icon = 'news/img/NewsHolder.png';
 
     private static $allowed_children = array(
         'NewsPage'

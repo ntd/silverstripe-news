@@ -12,6 +12,18 @@ class NewsPage extends Page {
         'Published'   => 'Date',
     );
 
+    /**
+     * @config
+     * @var String The default locale to use for the published date.
+     */
+    private static $date_locale = 'it_IT';
+
+    /**
+     * @config
+     * @var String The default date format of the published date.
+     */
+    private static $date_format = 'dd/MM/YYYY';
+
 
     public function getCMSFields() {
         $fields = parent::getCMSFields();
@@ -32,8 +44,8 @@ class NewsPage extends Page {
 
         $field = new DateField('Published', _t('News.Published'));
         $field->setDescription(_t('News.PublishedDescription'));
-        $field->setLocale('it_IT');
-        $field->setConfig('dateformat', 'dd/MM/YYYY');
+        $field->setLocale($this->config()->date_locale);
+        $field->setConfig('dateformat', $this->config()->date_format);
         $field->setConfig('showcalendar', true);
         $fields->addFieldToTab('Root.Main', $field, 'Content');
 

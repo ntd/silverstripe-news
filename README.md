@@ -15,6 +15,7 @@ Features
   specificaly requesting an `application/atom+xml` mime type at the
   `NewsHolder` URL or by accessing the `feed` news underneath it, e.g.
   `http://mysite/news/feed/`.
+* Back-end fully localized.
 * Author customizable for every `NewsHolder` instance.
 * Author customizable for every `NewsPage` instance.
 

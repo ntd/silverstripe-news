@@ -11,7 +11,7 @@
 					<div>$Summary</div><% end_if %>
 				</article>
 			</dd><% end_loop %>
-		</ul>
+		</dl>
 	</div><% else %>
 	<div class="alert alert-success alert-dismissible" role="alert">
 		<%t News.NO_NEWS %>

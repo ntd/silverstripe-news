@@ -1,7 +1,7 @@
 <?php
 
-class NewsHolder extends Page {
-
+class NewsHolder extends Page
+{
     private static $icon = 'news/img/NewsHolder.png';
 
     private static $allowed_children = array(
@@ -15,7 +15,8 @@ class NewsHolder extends Page {
     );
 
 
-    public function getCMSFields() {
+    public function getCMSFields()
+    {
         $fields = parent::getCMSFields();
 
         $group = new FieldGroup();
@@ -36,14 +37,15 @@ class NewsHolder extends Page {
     }
 }
 
-class NewsHolder_Controller extends Page_Controller {
-
+class NewsHolder_Controller extends Page_Controller
+{
     private static $allowed_actions = array(
         'feed',
     );
 
 
-    public function index($request) {
+    public function index($request)
+    {
         $types = $this->request->getAcceptMimetypes();
         if (is_array($types) && $types[0] == 'application/atom+xml') {
             // An application/atom+xml response has been requested
@@ -55,7 +57,8 @@ class NewsHolder_Controller extends Page_Controller {
         return $this->getViewer($this->action)->process($this);
     }
 
-    public function feed() {
+    public function feed()
+    {
         $this->response->addHeader('Content-Type', 'application/atom+xml');
         return $this->renderWith('AtomFeed');
     }

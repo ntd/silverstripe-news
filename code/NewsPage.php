@@ -1,7 +1,7 @@
 <?php
 
-class NewsPage extends Page {
-
+class NewsPage extends Page
+{
     private static $icon = 'news/img/NewsPage.png';
 
     private static $db = array(
@@ -13,19 +13,20 @@ class NewsPage extends Page {
     );
 
     /**
+     * The default locale to use for the published date.
      * @config
-     * @var String The default locale to use for the published date.
      */
     private static $date_locale = 'it_IT';
 
     /**
+     * The default date format of the published date.
      * @config
-     * @var String The default date format of the published date.
      */
     private static $date_format = 'dd/MM/YYYY';
 
 
-    public function getCMSFields() {
+    public function getCMSFields()
+    {
         $fields = parent::getCMSFields();
 
         $group = new FieldGroup();
@@ -56,7 +57,8 @@ class NewsPage extends Page {
         return $fields;
     }
 
-    public function XHTML_val($field, $arguments = null, $cache = false) {
+    public function XHTML_val($field, $arguments = null, $cache = false)
+    {
         $html = $this->XML_val($field, $arguments, $cache);
         $doc = new DOMDocument('1.0');
         $doc->strictErrorChecking = false;
@@ -70,8 +72,9 @@ class NewsPage extends Page {
             $children = @$doc->getElementsByTagName('body')->item(0)->childNodes;
             if ($children instanceof Traversable) {
                 $xml = '';
-                foreach ($children as $child)
+                foreach ($children as $child) {
                     $xml .= $doc->saveXML($child);
+                }
                 return $xml;
             }
         } catch (Exception $e) {
@@ -82,10 +85,12 @@ class NewsPage extends Page {
     }
 
 
-    public function TXT_val($field, $arguments = null, $cache = false) {
+    public function TXT_val($field, $arguments = null, $cache = false)
+    {
         return strip_tags($this->XML_val($field, $arguments, $cache));
     }
 }
 
-class NewsPage_Controller extends Page_Controller {
+class NewsPage_Controller extends Page_Controller
+{
 }

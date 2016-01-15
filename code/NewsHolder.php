@@ -2,7 +2,6 @@
 
 class NewsHolder extends Page
 {
-
     private static $icon = 'news/img/NewsHolder.png';
 
     private static $allowed_children = array(
@@ -40,7 +39,6 @@ class NewsHolder extends Page
 
 class NewsHolder_Controller extends Page_Controller
 {
-
     private static $allowed_actions = array(
         'feed',
     );

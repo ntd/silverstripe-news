@@ -2,7 +2,6 @@
 
 class NewsPage extends Page
 {
-
     private static $icon = 'news/img/NewsPage.png';
 
     private static $db = array(
@@ -14,14 +13,14 @@ class NewsPage extends Page
     );
 
     /**
+     * The default locale to use for the published date.
      * @config
-     * @var String The default locale to use for the published date.
      */
     private static $date_locale = 'it_IT';
 
     /**
+     * The default date format of the published date.
      * @config
-     * @var String The default date format of the published date.
      */
     private static $date_format = 'dd/MM/YYYY';
 
